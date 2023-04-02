@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arkanoid</title>
+    <link rel="icon" href="./img/icon.png">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/game.js"></script>
+    <script src="./js/ball.js"></script>
+    <script src="./js/platform.js"></script>
+    <script src="./js/objective.js"></script>
+
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="columnSide"></div>
+        <div class="columnMid">
+            <canvas id="game" width="700px" height="400px"></canvas>
+            <div class="center">
+                <button id="moveLeftButton" class="button-movement">Move left</button>
+                <button id="moveRightButton" class="button-movement">Move right</button>
+            </div>
+
+            <br>
+            <div>
+                <audio class="center" controls autoplay loop>
+                    <source src="./sounds/Intergalactic Odyssey.ogg" type="audio/ogg">
+                </audio>
+            </div>
+        </div>
+        <div class="columnSide">
+            <div class="container">
+                <div class="row">
+                  <div class="col col-heading">
+                    <h1>SCORE</h1>
+                  </div>
+                  <div class="col col-display" id="scoreHome">0</div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

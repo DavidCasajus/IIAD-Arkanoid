@@ -1,0 +1,109 @@
+#game {
+    display: block;
+    margin: 0 auto;
+    border: 3px solid blue;
+    background-image: url("../img/background.png");
+    background-repeat: repeat;
+}
+
+body {
+    background-color: black;
+}
+
+.center {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.button-movement {
+    width: 350px;
+    background-color: #2ea44f;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+  }
+
+  .columnSide {
+    float: left;
+    width: 15%;
+    padding: 10px;
+    height: 700px; /* Should be removed. Only for demonstration */
+
+  }
+
+  .columnMid {
+    float: left;
+    width: 60%;
+    padding: 10px;
+    height: 700px; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+  /* @font-face {
+  font-family: myFirstFont;
+  src: url(Cursed.ttf);
+} */
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+
+
+.container {
+  background: #4c1d95;
+  border-radius: 12px;
+  border: 3px solid white;
+  display: flex;
+  align-self: center;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  padding-bottom: 25px;
+  gap: 100px;
+  box-shadow: 0px 0px 3px black;
+}
+
+.col-heading h1 {
+  font-family: "Verdana";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 36px;
+  text-align: center;
+
+  color: white;
+}
+.col-display {
+  width: 155px;
+  height: 120px;
+  background: #080001;
+  border-radius: 5px;
+  font-family: "Silkscreen", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 90px;
+  line-height: 110px;
+  text-align: center;
+  color: #f94f6d;
+}
+.col-points {
+  margin-top: 25px;
+  display: flex;
+  gap: 10px;
+}
+
