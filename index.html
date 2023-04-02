@@ -12,18 +12,38 @@
     <script src="./js/ball.js"></script>
     <script src="./js/platform.js"></script>
     <script src="./js/objective.js"></script>
-
+    <script src="./js/controls.js"></script>
 
 </head>
 
 <body>
     <div class="row">
-        <div class="columnSide"></div>
+        <div class="columnSide">
+            <div class="instructions" id="instructions">
+                <h1>Instructions</h1>
+                <img src="./assets/arrows.png" width="200px" height="150px" class="center" />
+                <ul>
+                    <li>
+                        Use the left arrow to move to the left
+                    </li>
+                    <li>
+                        Use the right arrow to move to the right
+                    </li>
+                    <li>
+                        You can also use the bottons below the game
+                    </li>
+                </ul>
+            </div>
+
+            <button onclick="myFunction()" id="showHideButton" class="button">Hide instructions</button>
+            <button onclick="location.reload()" class="button">Reload game</button>
+            
+        </div>
         <div class="columnMid">
             <canvas id="game" width="700px" height="400px"></canvas>
             <div class="center">
-                <button id="moveLeftButton" class="button-movement">Move left</button>
-                <button id="moveRightButton" class="button-movement">Move right</button>
+                <button id="moveLeftButton" class="button button-movement">Move left</button>
+                <button id="moveRightButton" class="button button-movement">Move right</button>
             </div>
 
             <br>
@@ -36,12 +56,12 @@
         <div class="columnSide">
             <div class="container">
                 <div class="row">
-                  <div class="col col-heading">
-                    <h1>SCORE</h1>
-                  </div>
-                  <div class="col col-display" id="scoreHome">0</div>
+                    <div class="col col-heading">
+                        <h1>SCORE</h1>
+                    </div>
+                    <div class="col col-display" id="scoreHome">0</div>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
 

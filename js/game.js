@@ -7,7 +7,7 @@ var keepPlaying = true
 var score = 0
 const objectiveRows = 3
 const objectivePerRow = 10
-const winScore = objectiveRows * objectivePerRow
+const winScore = 1
 
 const requestAnimationFrame = window.requestAnimationFrame
 //El método window.requestAnimationFrame informa al navegador que quieres realizar una animación y solicita que el navegador programe el repintado de la ventana para el próximo ciclo de animación. El método acepta como argumento una función a la que llamar antes de efectuar el repintado.
@@ -59,9 +59,6 @@ window.onload = () => {
 
 const core = (platform, objectives, ball, context) => {
 
-
-
-
     if (ball.y >= fieldHeight - Platform.height - Ball.radius) {
         //si esta tocando la barra
         if ((ball.x + (Ball.radius * 2) >= platform.x) && (ball.x - (Ball.radius * 2) <= platform.x + Platform.width)) {
@@ -111,19 +108,20 @@ const core = (platform, objectives, ball, context) => {
                 score++;
 
 
-                if (score == winScore) {
-                    var audio = new Audio('./audio/Arkanoid SFX (9).wav');
-                    audio.play();
-                    finish(context, true)
-                    keepPlaying = false;
 
-                    return
-                }
 
                 var audio = new Audio('./audio/Arkanoid SFX (2).wav');
                 audio.play();
                 document.getElementById('scoreHome').innerHTML = score
                 ball.angle *= -1
+
+                if (score == winScore) {
+                    var audio = new Audio('./audio/Arkanoid SFX (9).wav');
+                    audio.play();
+                    finish(context, true)
+                    keepPlaying = false;
+                }
+
                 return
 
             }
