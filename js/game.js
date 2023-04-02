@@ -7,7 +7,7 @@ var keepPlaying = true
 var score = 0
 const objectiveRows = 3
 const objectivePerRow = 10
-const winScore = 1
+const winScore = 60
 
 const requestAnimationFrame = window.requestAnimationFrame
 //El método window.requestAnimationFrame informa al navegador que quieres realizar una animación y solicita que el navegador programe el repintado de la ventana para el próximo ciclo de animación. El método acepta como argumento una función a la que llamar antes de efectuar el repintado.
