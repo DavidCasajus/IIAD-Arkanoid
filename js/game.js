@@ -3,11 +3,13 @@
 //https://www.flaticon.com/free-icon/arkanoid_2285752
 const fieldHeight = 400
 const fieldWidth = 700
-var keepPlaying = true
-var score = 0
 const objectiveRows = 3
 const objectivePerRow = 10
 const winScore = 60
+
+var keepPlaying = true
+var score = 0
+var damage = 1
 
 const requestAnimationFrame = window.requestAnimationFrame
 //El método window.requestAnimationFrame informa al navegador que quieres realizar una animación y solicita que el navegador programe el repintado de la ventana para el próximo ciclo de animación. El método acepta como argumento una función a la que llamar antes de efectuar el repintado.
@@ -98,15 +100,27 @@ const core = (platform, objectives, ball, context) => {
                 && ball.y - Ball.radius <= objective.y + Objective.height && ball.y + Ball.radius >= objective.y
             ) {
                 if (objective.layers <= 0) {
+                    if (objective.upgrade >= 0) {
+                        switch (objective.upgrade) {
+                            case 0:
+                                Platform.width -= 30
+                                break;
+                            case 1:
+                                Platform.width += 30
+                                break;
+                            case 2:
+                                Ball.speed = Ball.speed + 2;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
                     objective.isAlive = false
 
-                } else {
-                    objective.layers--;
-                    objective.img.src = Objective.layersImages[objective.layers]
-
                 }
-                score++;
-
+                objective.layers = objective.layers - damage;
+                score = score + damage;
+                objective.img.src = Objective.layersImages[objective.layers]
 
 
 
