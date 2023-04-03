@@ -5,7 +5,7 @@ const fieldHeight = 400
 const fieldWidth = 700
 const objectiveRows = 3
 const objectivePerRow = 10
-const winScore = 60
+const winScore = 57
 
 var keepPlaying = true
 var score = 0
