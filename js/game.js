@@ -15,13 +15,9 @@ class Game {
         this.damage = 1
     }
 
-
-
     requestAnimationFrame = window.requestAnimationFrame
     //El método window.requestAnimationFrame informa al navegador que quieres realizar una animación y solicita que el navegador programe el repintado de la ventana para el próximo ciclo de animación. El método acepta como argumento una función a la que llamar antes de efectuar el repintado.
     //window.webkitRequestAnimationFrame(callback[, element]);
-
-
 
     render = (context, platform, objectives, ball) => {
 
@@ -80,7 +76,7 @@ class Game {
                 if (ball.x - Ball.radius <= objective.x + Objective.width && ball.x + Ball.radius >= objective.x
                     && ball.y - Ball.radius <= objective.y + Objective.height && ball.y + Ball.radius >= objective.y
                 ) {
-                    ball.notifyObservers()
+
                     console.log("---------------")
                     if (objective.layers <= 0) {
                         if (objective.upgrade >= 0) {
@@ -101,18 +97,13 @@ class Game {
                         objective.isAlive = false
 
                     }
+                    ball.notifyObservers()
                     objective.layers = objective.layers - this.damage;
-                    this.score = this.score + this.damage;
+
                     if (objective.layers >= 0) {
                         objective.img.src = Objective.layersImages[objective.layers]
                     }
 
-
-
-
-                    var audio = new Audio('./audio/Arkanoid SFX (2).wav');
-                    audio.play();
-                    document.getElementById('scoreHome').innerHTML = this.score
                     ball.angle *= -1
 
                     if (this.score == this.winScore) {
@@ -173,9 +164,12 @@ class Game {
 }
 
 // Notify method that Subject calls on notifyObservers
-Game.prototype.notify = function (x,y) {
-    console.log("Observer.notify: ball colision with objective detected at position x:"+x+" and y:"+y)
-    // Do something
+Game.prototype.notify = function (x, y) {
+    console.log("Observer.notify: ball colision with objective detected at position x:" + x + " and y:" + y);
+    this.score = this.score + this.damage;
+    var audio = new Audio('./audio/Arkanoid SFX (2).wav');
+    audio.play();
+    document.getElementById('scoreHome').innerHTML = this.score;
 }
 
 
