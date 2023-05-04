@@ -3,13 +3,13 @@
 //https://www.flaticon.com/free-icon/arkanoid_2285752
 const fieldHeight = 400
 const fieldWidth = 700
-const objectiveRows = 1
-const objectivePerRow = 1
+const objectiveRows = 3
+const objectivePerRow = 10
 
 class Game {
 
     constructor() {
-        this.winScore = 1
+        this.winScore = 57
         this.keepPlaying = true
         this.score = 0
         this.damage = 1
